@@ -31,15 +31,16 @@
                             </ul>
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
-                                <input type="text" name="kanjiName" placeholder="山田　太郎" th:value="${form.kanjiName}"/>
-                            </div>
+                                <input type="text" name="kanjiName"placeholder="山田"size="10" style="width:15px;" th:value="${form.kanjiName}"/>
+                                <input type="text" name="kanjiName"placeholder="山田"size="10" style="width:15px;" th:value="${form.kanjiName}"/>
 
+                            </div>
                             <ul class="ui red basic label" th:if="${form.hasErrors('kanaName')}">
                                 <li th:each="error : ${form.getErrors('kanaName')}" th:text="${error}"></li>
                             </ul>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
-                                <input type="text" name="kanaName" placeholder="ヤマダ　タロウ" th:value="${form.kanaName}"/>
+                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
                             </div>
 
                             <ul class="ui red basic label" th:if="${form.hasErrors('alphabetName')}">
@@ -47,7 +48,7 @@
                             </ul>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
-                                <input type="text" name="alphabetName" placeholder="YAMADA TARO" th:value="${form.alphabetName}"/>
+                                <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
                             </div>
 
                             <ul class="ui red basic label" th:if="${form.hasErrors('gender')}">
@@ -104,7 +105,7 @@
                             </ul>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
-                                <input type="text" name="emailAddress"placeholder="sample@tis.com" th:value="${form.emailAddress}"/>
+                                <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
                             </div>
 
                             <ul class="ui red basic label" th:if="${form.hasErrors('spouse')}">
