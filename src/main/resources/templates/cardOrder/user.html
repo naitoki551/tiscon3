@@ -28,8 +28,11 @@
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
-                                <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                <input type="text" name="kanjiName"placeholder="山田"size="10" style="width:15px;" th:value="${form.kanjiName}"/>
+                                <input type="text" name="kanjiName"placeholder="山田"size="10" style="width:15px;" th:value="${form.kanjiName}"/>
+
                             </div>
+
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
                                 <input type="text" name="kanaName" th:value="${form.kanaName}"/>
