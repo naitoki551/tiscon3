@@ -33,21 +33,21 @@
                                 <input type="text" name="employerName" placeholder="TIS"th:value="${form.employerName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
-                                <label>お勤め先郵便番号</label>
-                                <input type="text" name="employerZipCode" placeholder="530-0001"　th:value="${form.employerZipCode}"/>
+                                <label>お勤め先郵便番号 ※半角数字</label>
+                                <input type="text" name="employerZipCode" placeholder="530-0001" th:value="${form.employerZipCode}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
-                                <input type="text" name="employerAddress" placeholder="大阪市北区"　th:value="${form.employerAddress}"/>
+                                <input type="text" name="employerAddress" placeholder="大阪市北区堂島浜１－２－１　新ダイビル" th:value="${form.employerAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
-                                <label>お勤め先電話番号</label>
+                                <label>お勤め先電話番号 ※半角数字</label>
                                 <input type="text" name="employerPhoneNumber" placeholder="06-4797-3060" th:value="${form.employerPhoneNumber}"/>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                 <label>業種</label>
-                                <select style="width:240px;">
+                                <select name="industryType" style="width:240px;">
                                     <option value="">▼選択してください</option>
                                     <option value="農林水鉱"th:checked="${form.industryType}=='農林水鉱'"/>農業・林業・水産業・鉱業</option>
                                     <option value="建築不動産"th:checked="${form.industryType}=='建築不動産'"/>建設・不動産業</option>
@@ -65,7 +65,7 @@
 
                             <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
                                 <label>資本金</label>
-                                 <select style="width:240px;">
+                                 <select name="capital" style="width:240px;">
                                         <option value="">▼選択してください</option>
                                         <option value="999"th:checked="${form.capital}=='999'"/>１千万円未満</option>
                                         <option value="4999"th:checked="${form.capital}=='4999'"/>１千万円以上５千万円未満</option>
@@ -77,7 +77,7 @@
 
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                 <label>お勤め先の規模（従業員数）</label>
-                                <select style="width:240px;">
+                                <select name="companySize" style="width:240px;">
                                     <option value="">▼選択してください</option>
                                     <option value="9"th:checked="${form.companySize}=='9'"/>１０名未満</option>
                                     <option value="29"th:checked="${form.companySize}=='29'"/>１０名以上３０名未満</option>
