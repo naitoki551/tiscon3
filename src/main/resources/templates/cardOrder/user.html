@@ -4,6 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout/layout">
 <head>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
     <title>新規作成</title>
 
     <script src="/assets/js/metrixir.client.js"></script>
@@ -71,19 +72,32 @@
 
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号 ※半角数字</label>
+
                                 <div th:if="${form.hasErrors('zipCode')}">
                                     <label th:each="error : ${form.getErrors('zipCode')}" th:text="${error}"></label>
                                 </div>
-                                <input type="text" class="zipcode" name="zipCode" placeholder="530-0004" th:value="${form.zipCode}"/>
+
+                                <!-- ▼郵便番号入力フィールド(7桁) -->
+                                <input type="text" class="zipcode" name="zipCode" size="10" maxlength="8" placeholder="530-0004" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" th:value="${form.zipCode}"/>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
-                                <div th:if="${form.hasErrors('address')}">
+                                <div th:if="${form.hasErrors('pref')}">
                                     <label th:each="error : ${form.getErrors('address')}" th:text="${error}"></label>
                                 </div>
                                 <input type="text" name="address" placeholder="大阪府大阪市北区堂島浜１－２－１　新ダイビル"th:value="${form.address}"/>
+                                <!-- ▼住所入力フィールド(都道府県+以降の住所)
+                                <input type="text" name="pref"  placeholder="大阪府">
+                                <label>市区町村</label>
+                                <input type="text" name="addr" placeholder="大阪市北区堂島浜">
+                                <label>番地</label>
+                                <input type="text" name="banchi"  placeholder="1-2-1">
+                                <label>建物名</label>
+                                <input type="text" name="building" placeholder="新ダイビル"> -->
+
                             </div>
+
 
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <label>自宅電話番号 ※半角数字</label>
