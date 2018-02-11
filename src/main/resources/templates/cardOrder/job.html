@@ -34,7 +34,9 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
                                 <label>お勤め先郵便番号 ※半角数字</label>
-                                <input type="text" name="employerZipCode" placeholder="530-0001" th:value="${form.employerZipCode}"/>
+                                <!-- ▼郵便番号入力フィールド(7桁) -->
+                                <input type="text" class="zipcode" name="employerZipCode" size="10" maxlength="8" placeholder="530-0001" onKeyUp="AjaxZip3.zip2addr(this,'','emplyerAddress','employerAddress');" th:value="${form.employerZipCode}"/>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
